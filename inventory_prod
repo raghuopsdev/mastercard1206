@@ -1,0 +1,28 @@
+web1 ansible_ssh_host=172.31.2.127
+db1 ansible_ssh_host=192.168.1.8
+
+
+
+     [webserver]
+
+     web1
+
+
+
+     [dbservers]
+
+     db1
+
+
+
+     [datacenter:children]
+
+     webserver
+     dbservers
+
+
+
+     [datcenter:vars]
+
+      ansible_ssh_user=docker
+      ansibe_ssh_pass=docker
