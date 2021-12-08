@@ -2,8 +2,10 @@
 # tasks file for tomcat
 - name: Deploy configuration File
   template: src=templates/proxy.j2 dest=/etc/httpd/conf.d/proxy.conf
-- name: restart tomcat
-  service: name=tomcat state=restarted
+  notify:
+  - restart tomcat
+#- name: restart tomcat
+#  service: name=tomcat state=restarted
 - name: manage packages
   package: name={{ item.name }} state={{ item.state }}
   with_items:

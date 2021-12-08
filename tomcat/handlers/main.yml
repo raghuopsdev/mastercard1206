@@ -1,4 +1,4 @@
 ---
 # handlers file for tomcat
-- name: restarttomcat
+- name: restart tomcat
   service: name=tomcat state=restarted
