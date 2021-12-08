@@ -13,8 +13,8 @@
 - name: Ensure Apache is running
   service: name=httpd enabled=yes state=started
 
-- name: Deploy configuration File
-  template: src=templates/proxy.j2 dest=/etc/httpd/conf.d/proxy.conf
+#- name: Deploy configuration File
+#  template: src=templates/proxy.j2 dest=/etc/httpd/conf.d/proxy.conf
 
   notify:
   - Restart Apache
