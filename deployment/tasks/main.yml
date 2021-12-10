@@ -1,0 +1,10 @@
+---
+# tasks file for deployment
+- name: copy jar/war onto tomcat servers
+  copy:
+      src: /var/lib/jenkins/.m2/repository/com/example/maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-SNAPSHOT.war
+      dest: /usr/share/tomcat/webapps
+#- name: remove helloworld
+  
+- name: restart tomcat
+  service: name=tomcat state=restarted
